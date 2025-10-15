@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Fair Deal Auto Consultant</title>
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <script src="https://kit.fontawesome.com/e29bf25393.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+   <!-- header section starts  -->
+   <header class="header">
+
+      <nav class="navbar">
+         <div class="logo">
+            <img src="images/Logo.jpg" width="65" height="65"></img>
+            <p>Fair Deal Auto Consultant</p>
+         </div>
+
+         <div class="links">
+            <a href="#home">home</a>
+            <a href="#ab">about</a>
+            <a href="#services">services</a>
+            <a href="#contact">contact</a>
+         </div>
+         <!-- <img class="pro" src="images/default.png" height="48px" width="48px"> -->
+         <div id="menu-btn" class="fa fa-bars"></div>
+      </nav>
+   </header>
+
+   <!-- header section ends -->
+
+   <!-- home section starts  -->
+
+   <section class="home" id="home">
+      <div class="image">
+         <img src="images/main.jpg" alt="">
+      </div>
+
+      <div class="content">
+         <h3>Find Your Perfect Ride Here</h3>
+         <p>At Fair Deal Auto Consultant, we offer a wide selection of high-quality, thoroughly inspected second-hand
+            bikes and cars with flexible EMI and financing options to suit your budget. Our experienced team provides
+            honest advice and ensures every vehicle meets strict safety and performance standards, making your purchase
+            smooth, confident, and affordable. We strive to make the buying process simple, trustworthy, and stress-free
+            by providing transparent dealings and genuine spare parts, with customer satisfaction as our top priority
+            from consultation to final delivery.</p>
+
+         <a href="#contact" class="btn">Contact</a>
+      </div>
+
+   </section>
+
+   <!-- home section ends -->
+
+   <section class="gap" id="ab"></section>
+
+   <!-- about section starts  -->
+
+   <h1 class="heading" style="margin-top: 5rem; margin-bottom:0px;">About</h1>
+   <section class="about" id="about" style="margin-top: 0px; padding-top:2rem;">
+
+      <div class="content">
+         <h3>Trusted Second-Hand Bikes & Cars</h3>
+         <p>At Fair Deal Auto Consultant, we help customers find reliable, high-quality second-hand bikes and cars that
+            suit their needs and budget. With years of industry experience, our knowledgeable team offers honest advice,
+            thorough inspections, and transparent dealings to ensure peace of mind with every purchase.</p>
+
+         <p>We understand that buying used vehicles can be overwhelming, so we make the process simple, trustworthy, and
+            stress-free. Every vehicle is carefully checked and maintained using genuine spare parts. Customer
+            satisfaction remains our top priority from consultation to final delivery.</p>
+         <a href="#services" class="btn">read more</a>
+      </div>
+
+      <div class="image">
+         <img src="images/about.jpg" alt="" style="border-radius: 200px;">
+      </div>
+
+   </section>
+
+   <!-- about section ends -->
+   <!-- <section class="gap"></section> -->
+
+   <!-- services section starts  -->
+   <!-- 
+   <section class="services" id="services">
+
+      <h1 class="heading"> Why <span>Choose Us</span> </h1>
+
+      <div class="box-container">
+
+         <div class="box">
+            <h3>Motor Bike Repair</h3>
+         </div>
+
+         <div class="box">
+            <h3>Engine work</h3>
+         </div>
+
+         <div class="box">
+            <h3>Painting</h3>
+         </div>
+
+         <div class="box">
+            <h3>Bike Modification</h3>
+         </div>
+
+         <div class="box">
+            <h3>Tinkering</h3>
+         </div>
+
+         <div class="box">
+            <h3>GENUINE SPARES PARTS AVAILABLE</h3>
+         </div>
+      </div>
+
+   </section> -->
+
+   <!-- services section ends -->
+   <section class="gap"></section>
+
+   <!-- gallery section starts  -->
+   <!-- 
+   <section class="gallery" id="gallery">
+
+      <h1 class="heading"> our <span>gallery</span> </h1>
+
+      <div class="gallery-container">
+
+         <a class="box" href="images/IMG_9709.jpg"><img src="images/IMG_9709.jpg" alt=""></a>
+         <a class="box" href="images/IMG_9710.jpg"><img src="images/IMG_9709.jpg" alt=""></a>
+         <a class="box" href="images/IMG_9711.jpg"><img src="images/IMG_9711.jpg" alt=""></a>
+         <a class="box" href="images/g-img-4.jpg"><img src="images/repair4" alt=""></a>
+         <a class="box" href="images/g-img-5.jpg"><img src="images/repair5.avif" alt=""></a>
+         <a class="box" href="images/g-img-6.jpg"><img src="images/repair6" alt=""></a>
+
+      </div>
+
+   </section> -->
+
+   <!-- gallery section ends -->
+
+   <!-- reviews section starts  -->
+
+   <!-- <section class="swiper mySwiper">
+      <h1 class="heading" id="reviews">Customer <span>Reviews</span> </h1>
+      <div class="swiper-wrapper">
+
+         <div class="card swiper-slide">
+            <div class="card__image">
+               <img src="{{user.profile.image.url}}" alt="card image">
+            </div>
+            <form action="/reviews" method="post">
+               {% csrf_token %}
+               <div class="card__content">
+                  <span class="card__title">{{user.first_name}}
+                     {{user.last_name}}</span>
+                     {{rev.review_message}}
+                  <button type="submit" class="card__btn">Send</button>
+               </div>
+         </div>
+         </form>
+         {% for i in revs reversed %}
+         <div class="card swiper-slide">
+            {% if i.boss.username == user.username %}
+            <a href="{% url 'delete_reviews' i.id %}"><i class="fas fa-times" id="card_btn"></i></a>
+            {% endif %}
+            <div class="card__image">
+               <img src="{{i.boss.profile.image.url}}" alt="card image">
+            </div>
+            
+            <div class="card__content">
+               <span class="card__title">{{i.boss.first_name}} {{i.boss.last_name}}</span> -->
+   <!-- <span class="card__name">Vanessa Martinez</span> -->
+   <!-- <p class="card__text" width="10%">{{i.review_message}}</p>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </section> -->
+
+   <!-- Swiper JS -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+
+   <!-- Initialize Swiper -->
+   <!-- <script>
+      var swiper = new Swiper(".mySwiper", {
+         effect: "coverflow",
+         grabCursor: true,
+         slidesPerView: "auto",
+         coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 300,
+            modifier: 1,
+            slideShadows: false,
+         },
+         pagination: {
+            el: ".swiper-pagination",
+         },
+      });
+      document.getElementById('id_review_message').placeholder='Type Somthing...'
+   </script> -->
+   <!-- Reviews section ends -->
+
+   <!-- team section starts  -->
+
+   <!-- <section class="gap"></section> -->
+
+
+   <section class="team" id="services">
+
+      <h1 class="heading"> Why Choose <span>Us</span> </h1>
+
+      <div class="box-container">
+
+         <div class="box">
+            <i class="fas fa-exchange-alt fa-3x"></i>
+            <div class="content">
+               <h3>Easy Exchange</h3>
+               <p>Exchange your old bike or car smoothly with us and get the best value towards your new purchase with
+                  minimal paperwork.</p>
+            </div>
+         </div>
+
+         <div class="box">
+            <i class="fas fa-certificate fa-3x"></i>
+            <div class="content">
+               <h3>Certified Vehicles</h3>
+               <p>Our bikes and cars are thoroughly inspected and certified to meet high standards, ensuring trust and
+                  quality in every purchase.</p>
+            </div>
+         </div>
+
+         <div class="box">
+            <i class="fas fa-hand-holding-usd fa-3x"></i>
+            <div class="content">
+               <h3>EMI/Finance Available</h3>
+               <p>Flexible EMI and financing options are available to make buying your dream bike or car easy,
+                  affordable, and hassle-free.</p>
+            </div>
+         </div>
+
+         <div class="box">
+            <i class="fas fa-ellipsis-h fa-3x"></i>
+            <div class="content">
+               <h3>Easy RC Transfer</h3>
+               <p>Get your vehicle's ownership transferred smoothly with minimal paperwork and zero hassle, thanks to
+                  our simplified process.</p>
+            </div>
+         </div>
+
+         <div class="box">
+            <i class="fas fa-shield-alt fa-3x"></i>
+            <div class="content">
+               <h3>Insurance Available</h3>
+               <p>We offer comprehensive insurance options to protect your bike or car against accidents, theft, and
+                  liabilities, ensuring peace of mind.</p>
+            </div>
+         </div>
+
+         <div class="box">
+            <i class="fas fa-tools fa-3x"></i>
+            <div class="content">
+               <h3>Bike & Car Service</h3>
+               <p>Enjoy expert maintenance and servicing to keep your bike and car running smoothly, safely, and
+                  efficiently for years to come.</p>
+            </div>
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- team section ends -->
+
+   <section class="gap"></section>
+
+   <!-- contact section starts  -->
+
+   <section class="contact" id="contact">
+
+      <h1 class="heading"> Contact <span>Us</span> </h1>
+
+      <div class="row">
+         <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6754219771265!2d77.59309167465014!3d12.928570787382867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15a5f031f4c5%3A0xa52704cde45a1491!2sFair%20Deal%20Auto%20Consultants!5e0!3m2!1sen!2sin!4v1760356769378!5m2!1sen!2sin"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+   </section>
+
+   <!-- contact section ends -->
+
+   <!-- footer section starts  -->
+
+   <section class="footer">
+
+      <div class="box-container">
+
+         <div class="box">
+            <h3>quick links</h3>
+            <a class="link" href="#home"> <i class="fas fa-angle-right"></i> Home</a>
+            <a class="link" href="#about"> <i class="fas fa-angle-right"></i> About</a>
+            <a class="link" href="#services"> <i class="fas fa-angle-right"></i> Services</a>
+            <!-- <a class="link" href="#reviews"> <i class="fas fa-angle-right"></i> Reviews</a> -->
+            <a class="link" href="#contact"> <i class="fas fa-angle-right"></i> Contact</a>
+         </div>
+
+         <div class="box">
+            <h3>contact info</h3>
+            <a href="tel:7899368607" class="link"> <i class="fas fa-phone"></i> 7899368607 </a>
+            <a href="tel:9845286659" class="link"> <i class="fas fa-phone"></i> 9845286659 </a>
+            <a href="mailto:fairdealvehicles1995@gmail.com" class="link"> <i class="fas fa-envelope"></i>
+               fairdealvehicles1995@gmail.com </a>
+            <a class="link"> <i class="fas fa-map"></i> Swagath Garuda Mall, 48/A, Swagath Rd, BTB Area, RBI Colony,
+               Jayanagar, Bengaluru, Karnataka 560041 </a>
+         </div>
+
+         <div class="box">
+            <h3>newsletter</h3>
+            <p>Subscribe for latest updates</p>
+            <form>
+               <input type="email" name="email" placeholder="Enter your email" class="email">
+               <input type="submit" value="subscribe" class="btn">
+            </form>
+            <div class="share">
+               <a href="https://www.facebook.com/share/17Wt9Zjpew" target="_blank" class="fab fa-facebook-f"></a>
+               <a href="https://www.instagram.com/fairdeal_autoconsultant" target="_blank" class="fab fa-instagram"></a>
+               <a href="https://wa.me/7899368607" target="_blank" class="fab fa-whatsapp"></a>
+            </div>
+         </div>
+
+      </div>
+
+
+   </section>
+
+   <!-- footer section ends -->
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+   <!-- custom js file link  -->
+   <script src="js/scriptt.js"></script>
+
+   <!-- <script>
+      lightGallery(document.querySelector('.gallery .gallery-container'));
+      function mess() {
+         alert("Your message has been sent!")
+      }
+      function subscribe() {
+         alert("You have subscribed to this website")
+      }
+
+      var form_fields = document.getElementsByTagName('input')
+      form_fields[1].placeholder = 'Name';
+      form_fields[2].placeholder = 'Email ID';
+      form_fields[3].placeholder = 'Phone Number';
+      form_fields[4].placeholder = 'Subject';
+      document.getElementById('id_message').placeholder = 'Message';
+   </script> -->
+
+</body>
+
+</html>
